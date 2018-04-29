@@ -1,0 +1,60 @@
+{
+  "name": "gfynonce",
+  "version": "1.0.0",
+  "description": "nonce generator in the 'adjective adjective animal' pattern that that Gfycat (and Twitch) uses",
+  "main": "dist/gfynonce.js",
+  "module": "dist/gfynonce.es.js",
+  "browser": "dist/gfynonce.min.js",
+  "bin": "bin/index.js",
+  "author": "Burkes <hello@burkes.pw>",
+  "license": "MIT",
+  "homepage": "https://github.com/Burkes/gfynonce",
+  "repository": "github:Burkes/gfynonce",
+  "bugs": {
+    "url": "https://github.com/Burkes/gfynonce/issues",
+    "email": "gfynonce@burkes.pw"
+  },
+  "scripts": {
+    "lint": "eslint src test bin",
+    "prebuild": "npm run lint",
+    "build": "rollup -c",
+    "pretest": "npm run build",
+    "test": "mocha",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "nonce",
+    "adjectives",
+    "animals",
+    "generator",
+    "generation",
+    "random",
+    "pattern",
+    "gfycat",
+    "twitch",
+    "identifier",
+    "unique"
+  ],
+  "engines": {
+    "node": ">= 6"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "babelrc-rollup": "^3.0.0",
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "lodash.uniq": "^4.5.0",
+    "mocha": "^5.1.1",
+    "rollup": "^0.58.2",
+    "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-uglify": "^3.0.0"
+  },
+  "dependencies": {
+    "minimist": "^1.2.0"
+  }
+}
