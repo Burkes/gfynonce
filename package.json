@@ -1,6 +1,6 @@
 {
   "name": "gfynonce",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "nonce generator in the 'adjective adjective animal' pattern that that Gfycat (and Twitch) uses",
   "main": "dist/gfynonce.js",
   "module": "dist/gfynonce.es.js",
