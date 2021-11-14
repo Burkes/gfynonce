@@ -9,4 +9,4 @@ var argv = minimist(process.argv.slice(2));
 
 var options = Object.assign({}, { separator: '', adjectives: 2 }, argv);
 
-process.stdout.write(gfynonce(options));
+console.log(gfynonce(options));
