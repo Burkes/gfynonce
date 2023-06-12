@@ -18,23 +18,23 @@ const getRandomArraySliceStart = (array, size) => Math.max(0, randomIndex(array)
 const getRandomArraySlice = (array, size, start = getRandomArraySliceStart(array, size)) => shuffleArray(array).slice(start, start + size);
 
 // set some ground rules to prevent it from breaking
-const safeLength = (length, max) => {
-  if (length <= 0) return 1;
+const safeSize = (size, max) => {
+  if (size <= 0) return 1;
 
-  if (length >= max) return max;
+  if (size >= max) return max;
 
-  return length;
+  return size;
 };
 
 export default function gfynonce(options = {}) {
   options = Object.assign({}, DEFAULT_OPTIONS, options);
 
   return (
-    getRandomArraySlice(ANIMALS, safeLength(options.animals, ANIMALS.length))
+    getRandomArraySlice(ANIMALS, safeSize(options.animals, ANIMALS.length))
       .map((animal) => [
           ...getRandomArraySlice(
             ADJECTIVES,
-            safeLength(options.adjectives, ADJECTIVES.length)
+            safeSize(options.adjectives, ADJECTIVES.length)
           ),
           animal,
         ].join(options.separator))
