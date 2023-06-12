@@ -142,6 +142,26 @@ describe('gfynonce', () => {
             return false;
           });
       });
+      it("should generate a nonce with default adjectives and 2 animals", () => {
+        const adjectives = 2;
+        const animals = 2;
+        const separator = ".";
+
+        expect(gfynonce({ animals, separator, adjectives })).to.satisfy(
+          (result) => {
+            const phrases = result.split("\n");
+
+            return (
+              phrases.length === 2 &&
+              phrases.every((phrase) => {
+                const pieces = phrase.split(separator).slice(0, adjectives);
+
+                return uniq(pieces).length === adjectives;
+              })
+            );
+          }
+        );
+      });
     });
   });
 });
