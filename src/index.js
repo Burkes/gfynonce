@@ -31,15 +31,13 @@ export default function gfynonce(options = {}) {
 
   return (
     getRandomArraySlice(ANIMALS, safeLength(options.animals, ANIMALS.length))
-      .map((animal) => {
-        return [
+      .map((animal) => [
           ...getRandomArraySlice(
             ADJECTIVES,
             safeLength(options.adjectives, ADJECTIVES.length)
           ),
           animal,
-        ].join(options.separator);
-      })
+        ].join(options.separator))
       // TODO - maybe a custom phrase separator
       .join("\n")
   );
